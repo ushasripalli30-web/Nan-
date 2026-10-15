@@ -1,0 +1,16 @@
+import pandas as pd
+#create a dataframe
+data={'Name':['Kane','Saka','immobile','insigne'],'Age':[27,19,31,30],'Club':['Tottenham','Arsenal',None,None]}
+df=pd.DataFrame(data)
+print("Original Dataframe:")
+print(df)
+#filling NAN with string
+df['Club']=df['Club'].fillna('No data found')
+print("\nafter filling NAN:")
+print(df)
+#sorting based on age
+print("\nsorted by age:")
+print(df.sort_values('Age'))
+#groupby
+print("\ngroup by club:")
+print(df.groupby('Club')['Age'].sum())
